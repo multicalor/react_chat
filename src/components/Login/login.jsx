@@ -1,8 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../Login/style.css'
 
 class Login extends Component {
     
+    state = {
+        username: '',
+        room: '',
+    }
+
+    
+
     render() {
         return (
             <div class="join-container">
