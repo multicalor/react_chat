@@ -4,12 +4,14 @@ import './App.css';
 
 // Component imports
 import Login from './components/Login/login'
+import Dashboard from './components/Dashboard/dashboard';
 
 function App() {
   return (
     <div className="App">
       <Fragment>
-      <Login />
+        <Dashboard />
+      {/* <Login /> */}
       </Fragment>
     </div>
   );
