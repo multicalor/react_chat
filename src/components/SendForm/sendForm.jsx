@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class SendForm extends React.Component {
+class SendForm extends Component {
     
     render() {
         <div class="chat-form-container">

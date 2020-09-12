@@ -5,6 +5,8 @@ import "./App.css";
 // Component imports
 import Login from "./components/Login/login";
 import Dashboard from "./components/Dashboard/dashboard";
+import ChatContainer from "./containers/ChatContainer/chatContainer";
+
 
 
 
@@ -18,7 +20,7 @@ import Dashboard from "./components/Dashboard/dashboard";
 class App extends Component {
 
   state = {
-    login: false,
+    login: true,
   }
 
   loging = (name) => {
@@ -37,7 +39,9 @@ class App extends Component {
       <div className="App">
         <Fragment>
           {/* <Dashboard /> */}
-          {login ? <Dashboard /> : <Login loging={this.loging} />}
+          {login ? 
+          <ChatContainer />
+          : <Login loging={this.loging} />}
         </Fragment>
       </div>
     );
