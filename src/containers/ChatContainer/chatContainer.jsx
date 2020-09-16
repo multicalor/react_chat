@@ -4,6 +4,7 @@ import './style.css'
 import Header from '../../components/Header/header'
 import ChatSidebar from '../../components/ChatSidebar/chatSidebar';
 import Messages from '../../components/Messages/messages'
+import SendForm from '../../components/SendForm/sendForm';
 
 class ChatContainer extends Component {
 
@@ -17,7 +18,9 @@ class ChatContainer extends Component {
                     <div class="chat-messages">
                         <Messages />
                     </div>
+                    
                 </div>
+                <SendForm />
             </div>
         )
     }

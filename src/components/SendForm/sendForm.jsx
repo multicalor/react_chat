@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+import './style.css'
 
 class SendForm extends Component {
     
     render() {
-        <div class="chat-form-container">
+        return (<div class="chat-form-container">
         <form id="chat-form">
           <input
             id="msg"
@@ -15,7 +15,7 @@ class SendForm extends Component {
           />
           <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
         </form>
-      </div>
+      </div>)
     }
   }
 

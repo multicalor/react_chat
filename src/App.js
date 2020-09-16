@@ -3,12 +3,10 @@ import React, { Component, Fragment } from "react";
 import "./App.css";
 
 // Component imports
-import Login from "./components/Login/login";
+// import Login from "./components/Login/login";
 import Dashboard from "./components/Dashboard/dashboard";
-import ChatContainer from "./containers/ChatContainer/chatContainer";
-
-
-
+// import ChatContainer from "./containers/ChatContainer/chatContainer";
+import Store from "./Store";
 
 // const loging = (user) => {
 //   if (user) {
@@ -17,35 +15,39 @@ import ChatContainer from "./containers/ChatContainer/chatContainer";
 //   }
 // };
 
-class App extends Component {
+function App() {
+  // state = {
+  //   login: true,
+  // };
 
-  state = {
-    login: true,
-  }
+  // loging = (name) => {
+  //   if (name) {
+  //     this.setState({
+  //       login: true,
+  //     });
+  //   }
+  //   return;
+  // };
 
-  loging = (name) => {
-    if (name){
-      this.setState({
-        login: true,
-      })
-    }
-    return
-  }
-
-  render() {
-    const { login } = this.state;
+  // render() {
+  //   const { login } = this.state;
 
     return (
       <div className="App">
-        <Fragment>
+
           {/* <Dashboard /> */}
-          {login ? 
-          <ChatContainer />
-          : <Login loging={this.loging} />}
-        </Fragment>
+          {/* {login ? ( */}
+            {/* // <ChatContainer /> */}
+            <Store>
+              <Dashboard />
+            </Store>
+          {/* // ) : (
+          //   <Login loging={this.loging} />
+          // )} */}
+  
       </div>
     );
   }
-}
+
 
 export default App;
