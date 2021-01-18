@@ -1,11 +1,17 @@
 import React, { createContext, useReducer } from "react";
 import io from "socket.io-client";
 
-export const ctx = React.createContext();
+import userJoin from './actionCreator'
 
-export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
+export const ctx = createContext();
 
-const initState = {
+const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
+const NEW_USER = 'NEW_USER'
+
+const initialState = {
+
+  users: [], 
+
   general: [
     { from: "Dimka", text: "Hello" },
   ],
@@ -21,11 +27,14 @@ const reducer = (state, action) => {
   
   switch (type) {
     case RECEIVE_MESSAGE:
-      console.log('four')
+      console.log('four', from, text, topic )
       return {
         ...state,
-        [topic]: [...state[topic], {from, text} ]
+        [topic]: [...state[topic].push({from, text}) ]
       }
+
+    // case NEW_USER:
+
 
     default:
       return state; 
@@ -40,19 +49,24 @@ const sendChatAction = (msg) => {
 }
 
 function Store(props) {
+  // let i = 0;
+  // setInterval(() => {
+  //   console.log(i)
+  //   i+=1
+  // }, 2000);
 
-  const [allChats, dispatch] = useReducer(reducer, initState);
+  const [allChats, dispatch] = useReducer(reducer, initialState);
 
   if (!socket) {
     socket = io(":3004");
-    socket.on("chat message", function (msg) {
-      console.log('three');
+    socket.on("chat message", (msg) => {
+      console.log('three', dispatch);
       dispatch({ type: RECEIVE_MESSAGE, payload: msg });
     });
   }
-  let user = "Dima" + Math.random(100).toFixed(2);
+  let user = "user" + Math.random(100).toFixed(2);
   return (
-    <ctx.Provider value={{ allChats, sendChatAction, user }}>
+    <ctx.Provider value={{ allChats, sendChatAction, userJoin }}>
       {props.children}
     </ctx.Provider>
   );

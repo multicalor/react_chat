@@ -5,46 +5,30 @@ import "./App.css";
 // Component imports
 // import Login from "./components/Login/login";
 import Dashboard from "./components/Dashboard/dashboard";
+// import Login from "./components/Login/login";
 // import ChatContainer from "./containers/ChatContainer/chatContainer";
 import Store from "./Store";
 
 // const loging = (user) => {
 //   if (user) {
-//     login = true;
+//     let login = true;
 //     console.log("loging", login);
 //   }
 // };
 
 function App() {
-  // state = {
+  // let state = {
   //   login: true,
   // };
 
-  // loging = (name) => {
-  //   if (name) {
-  //     this.setState({
-  //       login: true,
-  //     });
-  //   }
-  //   return;
-  // };
 
-  // render() {
-  //   const { login } = this.state;
+    // const login = state.login;
 
     return (
       <div className="App">
-
-          {/* <Dashboard /> */}
-          {/* {login ? ( */}
-            {/* // <ChatContainer /> */}
-            <Store>
+            {/* <Store>
               <Dashboard />
-            </Store>
-          {/* // ) : (
-          //   <Login loging={this.loging} />
-          // )} */}
-  
+            </Store> */}
       </div>
     );
   }

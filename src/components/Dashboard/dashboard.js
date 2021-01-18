@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -17,7 +17,7 @@ import {ctx} from '../../Store'
 
 const styles = (theme) => ({
   root: {
-    ...theme.mixins.gutters(),
+    // ...theme.mixins.gutters(),
     margin: "50px",
     textAlign: "center",
     paddingTop: theme.spacing.unit * 2,
@@ -54,15 +54,15 @@ const styles = (theme) => ({
 
   button: {
     marginRight: '2%',
-    marginButtom: '0',
+    marginBottom: '0',
   },
 });
 
-function Dushboard(props) {
+function Dashboard(props) {
   const { classes } = props;
 
   // Context store
-  const { allChats, sendChatAction, user } = React.useContext(ctx);
+  const {allChats, sendChatAction, user } = useContext(ctx); // убрал i
   console.log(allChats)
   const topics = Object.keys(allChats)
 
@@ -97,6 +97,7 @@ function Dushboard(props) {
                 <Chip label={chat.from} className={classes.chip} />
                 <div>
                   <Typography variant="body1" gutterBottom >{chat.text}</Typography>
+                  {/* <Typography variant="body1" gutterBottom >{i}</Typography> */}
                 </div>
               </div>
             ))}
@@ -127,8 +128,8 @@ function Dushboard(props) {
   );
 }
 
-Dushboard.propTypes = {
+Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Dushboard);
+export default withStyles(styles)(Dashboard);
