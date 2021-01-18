@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 // import logo from './logo.svg';
 import "./App.css";
 
 // Component imports
 // import Login from "./components/Login/login";
-import Dashboard from "./components/Dashboard/dashboard";
+import Dashboard from "./components/Dashboard/dashboard.js";
 // import ChatContainer from "./containers/ChatContainer/chatContainer";
 import Store from "./Store";
 
@@ -34,17 +34,9 @@ function App() {
 
     return (
       <div className="App">
-
-          {/* <Dashboard /> */}
-          {/* {login ? ( */}
-            {/* // <ChatContainer /> */}
             <Store>
               <Dashboard />
             </Store>
-          {/* // ) : (
-          //   <Login loging={this.loging} />
-          // )} */}
-  
       </div>
     );
   }

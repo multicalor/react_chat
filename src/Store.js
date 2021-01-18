@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import io from "socket.io-client";
 
-export const ctx = React.createContext();
+export const ctx = createContext();
 
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 

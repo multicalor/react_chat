@@ -54,15 +54,15 @@ const styles = (theme) => ({
 
   button: {
     marginRight: '2%',
-    marginButtom: '0',
+    marginBottom: '0',
   },
 });
 
-function Dushboard(props) {
+function Dashboard(props) {
   const { classes } = props;
 
   // Context store
-  const { allChats, sendChatAction, user } = React.useContext(ctx);
+  const { allChats, sendChatAction, user } = useContext(ctx);
   console.log(allChats)
   const topics = Object.keys(allChats)
 
@@ -127,8 +127,8 @@ function Dushboard(props) {
   );
 }
 
-Dushboard.propTypes = {
+Dashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Dushboard);
+export default withStyles(styles)(Dashboard);
